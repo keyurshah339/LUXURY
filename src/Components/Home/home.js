@@ -209,15 +209,6 @@ const images = [
         KEEP IN TOUCH
         </h3>
         <div>
-         
-         
-          <a
-            className="link primary-txt"
-            href="https://www.linkedin.com/in/keyur-shah-899378202/"
-          >
-            <i className="fab fa-linkedin-in fa-lg"></i>
-          </a>
-
           <a className="link primary-txt" href="https://github.com/keyurshah339">
             <i className="fab fa-github fa-lg"></i>
           </a>
