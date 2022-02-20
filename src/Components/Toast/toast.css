@@ -1,0 +1,21 @@
+.toast-container {
+  font-size: 0.8em;
+}
+
+/* Toast Component */
+.toast-container {
+  display: flex;
+  background: linear-gradient(to bottom, #8cd0e3 0, #0a3a5c 100%);
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 15rem;
+  color: white;
+  font-size: 0.85em;
+  z-index: 1;
+  border-radius: 0rem;
+}
+
+.toast-message {
+  padding: 0.2rem 1rem;
+}
