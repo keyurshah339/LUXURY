@@ -24,7 +24,7 @@ const images = [
   {
     label: '',
     imgPath:
-      'https://primeambassador.com/assets/images/share/mens-watches.jpg',
+      'https://www.spotthewatch.com/wp-content/uploads/2020/06/Luxury-men-watch.jpeg',
   },
   {
     label: '',
