@@ -5,7 +5,7 @@ faker.seed(4);
 export const database = [...Array(25)].map((_) => ({
   id: faker.datatype.uuid(),
   name: faker.commerce.productName(),
-  image: faker.image.business(),
+  image: faker.image.fashion(0,0 , true),
   price: faker.commerce.price(),
   category: faker.random.arrayElement([
     "Bags",
