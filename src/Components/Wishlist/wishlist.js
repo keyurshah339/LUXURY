@@ -1,6 +1,5 @@
 import { useDataContext } from "../../Context/data-context";
 import { WishlistItem } from "./wishlistItem";
-import wishlist from "../../images/wishlist.svg";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import {Navigation} from '../../Components'

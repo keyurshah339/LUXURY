@@ -1,16 +1,16 @@
-import { useDataContext } from "../../Context/data-context";
-import logo from "../../images/logo.png";
-import { NavLink } from "react-router-dom";
+  import { useDataContext } from "../../Context/data-context";
+  import { NavLink } from "react-router-dom";
+  import Button from '@mui/material/Button';
 
-export const Navigation = () => {
-  const {
-    state: { itemsInCart: items, itemsInWishlist: wishes }
-  } = useDataContext();
+  export const Navigation = () => {
+    const {
+      state: { itemsInCart: items, itemsInWishlist: wishes }
+    } = useDataContext();
 
-  const totalCartItems = items.reduce((acc, curr) => acc + curr.quantity, 0);
-  return (
+    const totalCartItems = items.reduce((acc, curr) => acc + curr.quantity, 0);
+    return (
 
-    
+      
     
     <nav className="nav flex-container">
       
@@ -28,7 +28,10 @@ export const Navigation = () => {
         </NavLink>
         <NavLink to="/cart" activeClassName="no-line fas fa-lg fa-shopping-cart secondary-txt" className="no-line fas fa-lg fa-shopping-cart primaryBg-txt"><span className={totalCartItems>0?"badge-icon primaryBg-txt":"hidden-vis"}>
         {totalCartItems}
-      </span></NavLink>        
+      </span></NavLink>     
+
+      <Button variant="contained">LOGOUT</Button>
+
       </section>
     </nav>
   );
