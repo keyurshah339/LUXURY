@@ -55,7 +55,7 @@ export const AuthCheck = () => {
         >
           <div className="info-section" style={{ margin: "auto" }}>
             <h3>Welcome to Luxury</h3>
-            <p className="subtext">Please login!</p>
+            <p className="subtext">Please login/Sign UP!</p>
             <br/>
             <p className="subtext">Username:tanay</p>
             <p className="subtext">Password:neog@2022</p>
