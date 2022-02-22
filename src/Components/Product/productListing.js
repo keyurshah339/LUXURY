@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDataContext } from "../../Context/data-context";
-import shopProduct from "../../images/window-shop.svg";
 import {
   FilterProducts,
   getSortedProducts,
@@ -53,11 +52,7 @@ export const ProductListing = () => {
             ))
           ) : (
             <>
-              <img
-                className="img-res img-svg"
-                src={shopProduct}
-                alt="products"
-              />
+              
               <h2 className="txt-header-2">No Products to display</h2>
             </>
           )}

@@ -1,5 +1,4 @@
 import { useDataContext } from "../../Context/data-context";
-import logo from "../../images/logo.png";
 import { NavLink } from "react-router-dom";
 
 export const Navigation = () => {
