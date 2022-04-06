@@ -11,13 +11,11 @@ import { useState } from "react";
 
 export const AuthCheck = () => {
     const [username,setusername]=useState('')
-    const [pass,setpass]=useState('')
-    const [err,seterr]=useState(false)
-    const navigate = useNavigate();
+      const [pass,setpass]=useState('')
+      const [err,seterr]=useState(false)
+      const navigate = useNavigate();
 
      function Authtry() {
-     console.log("authtry")
-        console.log(username,pass)
         if(username == 'tanay' && pass == 'neog@2022')
         {
              navigate("home")
@@ -34,10 +32,10 @@ export const AuthCheck = () => {
      <div>
       <div
         className="main"
-        style={{
-          width: "auto",
-          height: "100vh",
-          display: "flex",
+          style={{
+            width: "auto",
+            height: "100vh",
+            display: "flex",
           flexDirection: "column",
         }}
       >
@@ -53,13 +51,13 @@ export const AuthCheck = () => {
             display: "flex",
           }}
         >
-          <div className="info-section" style={{ margin: "auto" }}>
-            <h3>Welcome to Luxury</h3>
-            <p className="subtext">Please login/Sign UP!</p>
-            <br/>
-            <p className="subtext">Username:tanay</p>
-            <p className="subtext">Password:neog@2022</p>
-          </div>
+            <div className="info-section" style={{ margin: "auto" }}>
+              <h3>Welcome to Luxury</h3>
+              <p className="subtext">Please login/Sign UP!</p>
+              <br/>
+              <p className="subtext">Username:tanay</p>
+              <p className="subtext">Password:neog@2022</p>
+            </div>
 
           <div style={{ margin: "auto" }}>
             <div style={{ marginBottom: "1rem" }}>
@@ -112,15 +110,7 @@ export const AuthCheck = () => {
         </div>
 
         <div style={{ margin: "auto" }}>
-          {/* {loading ? (
-            <div class="lds-ring">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          ) : (
-            ""
-          )} */}
+       
         </div>
       </div>
     </div>
