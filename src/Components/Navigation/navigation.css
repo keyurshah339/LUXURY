@@ -1,9 +1,9 @@
 .nav {
-  padding: 0.2rem;
-  max-height: 3.5rem;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+    padding: 0.2rem;
+    max-height: 3.5rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
   z-index: 1;
 
   border: #8cd0e3;
@@ -11,12 +11,12 @@
   background-color:  #8cd0e3;
 }
 
-.no-line {
-  text-decoration: none;
-}
+  .no-line {
+    text-decoration: none;
+  }
 
-.img-logo {
-  width: 30%;
+  .img-logo {
+    width: 30%;
 }
 
 .badge-icon {
