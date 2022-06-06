@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 import "./App.css";
 import {
@@ -12,6 +12,7 @@ import {
 import { useDataContext } from "./Context/data-context";
 import { serverRequest } from "./api/serverRequest";
 import { AuthCheck } from './Components/Auth/auth'
+import axios from "axios";
 
 function App() {
   const {
@@ -19,16 +20,17 @@ function App() {
     dispatch,
   } = useDataContext();
 
+  const [prod,setprod] = useState()
+
   useEffect(() => {
-    (async () => {
-      const {
-        response: { products },
-        error,
-      } = await serverRequest("api/products", "GET");
-      if (!error) {
-        dispatch({ type: "SET_PRODUCTS", payload: products });
-      }
-    })();
+    var mydata
+    axios.get('https://videolib.tristan9.repl.co/products')
+    .then(res =>  {
+      mydata =res.data.products
+      console.log('mydata',mydata)
+      dispatch({ type: "SET_PRODUCTS", payload: mydata });
+    } )
+    
   }, [dispatch]);
 
   return (

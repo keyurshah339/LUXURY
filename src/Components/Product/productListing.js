@@ -15,6 +15,7 @@ export const ProductListing = () => {
   } = useDataContext();
 
   const sortedProducts = getSortedProducts(products, sortBy);
+  console.log('sortedProducts',sortedProducts)
   const filteredProducts = getFilteredProducts(
     sortedProducts,
     inStock,
@@ -22,6 +23,7 @@ export const ProductListing = () => {
     priceRange,
     searchValue
   );
+  console.log('filteredProducts',filteredProducts)
   useEffect(() => {
     document.title = "LUXURY | PRODUCTS";
     if (window.innerWidth >= 768) {
