@@ -29,7 +29,7 @@ export const AuthCheck = () => {
 
       console.log('inside authtry')
 
-     await axios.post('https://universely.herokuapp.com/login', {username: username, password: pass})
+     await axios.post('https://agile-headland-48240.herokuapp.com/login', {username: username, password: pass})
       .then(res => {
 
 
