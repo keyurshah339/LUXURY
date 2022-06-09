@@ -2,11 +2,31 @@
   import { useDataContext } from "../../Context/data-context";
   import { NavLink } from "react-router-dom";
   import Button from '@mui/material/Button';
+  import { Navigate } from "react-router-dom";
+  import { useNavigate } from "react-router-dom";
+
 
     export const Navigation = () => {
+
+      let navigate = useNavigate();
+
       const {
-        state: { itemsInCart: items, itemsInWishlist: wishes }
+        state: { itemsInCart: items, itemsInWishlist: wishes },
+        login,
+        setlogin
       } = useDataContext();
+
+
+      function logoutHandler(){
+        setlogin(false)
+        navigate("/login", { replace: true });
+      }
+
+      function loginHandler(){
+        navigate("/login", { replace: true });
+      }
+      
+
 
     const totalCartItems = items.reduce((acc, curr) => acc + curr.quantity, 0);
     return (
@@ -15,7 +35,7 @@
     
     <nav className="nav flex-container">
       
-      <NavLink to="/home" className="no-line nav-logo-container">
+      <NavLink to="/" className="no-line nav-logo-container">
        
          <span className="nav-header logo">LUXURY</span>
           </NavLink>
@@ -31,9 +51,9 @@
           {totalCartItems}
         </span></NavLink>
 
-      <NavLink style={{textDecoration:'none'}} to="/" ><span>
-      <Button variant="contained">LOGOUT</Button>
-      </span></NavLink>     
+      {login ? <Button onClick={logoutHandler}  variant="contained">Logout</Button>:<Button onClick={loginHandler}  variant="contained">Login</Button>}
+
+
 
       
 
