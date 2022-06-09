@@ -14,43 +14,37 @@ import { Redirect, useHistory} from 'react-router-dom';
 
 
 
-export const AuthCheck = () => {
+export  const Signup = () => {
 
   const {login,setlogin} = useDataContext();
 
     
   
     const [username,setusername]=useState('')
+    const [firstName,setfirstName]=useState('')
+    const [lastName,setlastName]=useState('')
+    const [email,setemail]=useState('')
+    
       const [pass,setpass]=useState('')
       const [err,seterr]=useState(false)
       const navigate = useNavigate();
 
-    async function Authtry() {
+    async function signMeUp() {
 
-      console.log('inside authtry')
+      console.log('inside signMeUp')
 
-     await axios.post('https://universely.herokuapp.com/login', {username: username, password: pass})
+     await axios.post('https://universely.herokuapp.com/signup', {username: username, password: pass, email: email, firstName: firstName,lastName:lastName})
       .then(res => {
-
-
-        setlogin(true)
         reRoute()
       })
-      .catch(error => {
-        seterr(true)
+      .catch(err => {
+        console.log(err)
       })
 
   }
 
  function reRoute(){
-  console.log('inside reRoute')
-  seterr(false)
-  navigate("/", { replace: true });
-  
- }
-
- function userSignup (){
-  navigate("/signup", { replace: true });
+  navigate("/login", { replace: true });
  }
 
 
@@ -82,10 +76,9 @@ export const AuthCheck = () => {
             <div className="info-section" style={{ margin: "auto" }}>
               <h3>Welcome to Luxury</h3>
               
-              <p className="subtext">Please login/Sign UP!</p>
+              <p className="subtext">Please Sign UP!</p>
               <br/>
-            
-              <h5 onClick={userSignup} style={{textDecoration: 'underline',cursor:'pointer'}}>New User ? Sign up!</h5>
+              
             </div>
             
 
@@ -131,9 +124,51 @@ export const AuthCheck = () => {
               ></input>
             </div>
 
+            <div>
+              <input
+                // onChange={(event) => setpassword(event.target.value)}
+                placeholder="First Name"
+                style={{
+                  marginBottom: "1rem",
+                  width: "200px",
+                  height: "30px",
+                  borderRadius: "0.5rem",
+                }}
+                onChange={(e) => setfirstName(e.target.value)}
+              ></input>
+            </div>
+
+            <div>
+              <input
+                // onChange={(event) => setpassword(event.target.value)}
+                placeholder="Last Name"
+                style={{
+                  marginBottom: "1rem",
+                  width: "200px",
+                  height: "30px",
+                  borderRadius: "0.5rem",
+                }}
+                onChange={(e) => setlastName(e.target.value)}
+              ></input>
+            </div>
+
+            <div>
+              <input
+                // onChange={(event) => setpassword(event.target.value)}
+                placeholder="Email"
+                style={{
+                  marginBottom: "1rem",
+                  width: "200px",
+                  height: "30px",
+                  borderRadius: "0.5rem",
+                }}
+                onChange={(e) => setemail(e.target.value)}
+              ></input>
+            </div>
+
             <div style={{ margin: "auto" }}>
-              <button onClick={Authtry} className="button">
-                Login
+              <button onClick={signMeUp} className="button">
+                Sign Up
               </button>
             </div>
           </div>

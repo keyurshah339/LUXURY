@@ -1,4 +1,4 @@
-  import { createContext, useContext, useReducer } from "react";
+  import { createContext, useContext, useReducer,useState } from "react";
   import { dataReducer } from "../Reducer/data-reducer";
 
   export const DataContext = createContext();
@@ -18,12 +18,15 @@
     searchValue:""
   };
 
+
+
 export const DataProvider = ({ children }) => {
-  
+
+  const [login,setlogin] = useState(false)
   const [state, dispatch] = useReducer(dataReducer,initialArg);
 
   return (
-    <DataContext.Provider value={{ state, dispatch }}>
+    <DataContext.Provider value={{ state, dispatch,login,setlogin }}>
       {children}
     </DataContext.Provider>
   );
