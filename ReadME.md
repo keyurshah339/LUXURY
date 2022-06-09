@@ -13,4 +13,4 @@ LUXURY is an e-commerce application that consists of high end products and acces
   
 ## Live link and demo
 
-[Deployed link](https://luxury-ecommerce.netlify.app/)
+[Deployed link](https://luxury-myecommerce.vercel.app/)
