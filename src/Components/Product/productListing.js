@@ -6,6 +6,9 @@ import {
   getFilteredProducts,
 } from "./filterProducts";
 import { Product } from "./products";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 
 
 export const ProductListing = () => {
@@ -54,8 +57,12 @@ export const ProductListing = () => {
             ))
           ) : (
             <>
+              <div style={{marginTop:"100px",marginRight:"200px"}}>
+              <Box sx={{ display: 'flex' }}>
+      <CircularProgress color="success" />
+    </Box>
+              </div>
               
-              <h2 className="txt-header-2">No Products to display</h2>
             </>
           )}
         </section>
