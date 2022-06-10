@@ -31,8 +31,7 @@ function App() {
     var mydata
     axios.get('https://videolib.tristan9.repl.co/products')
     .then(res =>  {
-      mydata =res.data.products
-      console.log('mydata',mydata)
+      mydata =res.data.products.map(v => ({...v, id: v._id}))
       dispatch({ type: "SET_PRODUCTS", payload: mydata });
     } )
     
